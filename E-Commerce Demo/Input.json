@@ -1,0 +1,654 @@
+ [
+  {
+  "products": [
+               {
+               "sku": 1,
+               "name": "polo1",
+               "cost": 10
+               },
+               {
+               "sku": 2,
+               "name": "polo2",
+               "cost": 20
+               },
+               {
+               "sku": 3,
+               "name": "polo3",
+               "cost": 3
+               },
+               {
+               "sku": 4,
+               "name": "polo4",
+               "cost": 4
+               },
+               {
+               "sku": 5,
+               "name": "polo5",
+               "cost": 1
+               },
+               {
+               "sku": 6,
+               "name": "polo6",
+               "cost": 0
+               },
+               {
+               "sku": 7,
+               "name": "polo7",
+               "cost": 80
+               },
+               {
+               "sku": 8,
+               "name": "polo8",
+               "cost": 12
+               },
+               {
+               "sku": 9,
+               "name": "polo9",
+               "cost": 13
+               }
+               ],
+  "name": "POLOS"
+  },
+  {
+  "name": "Sweatshirts",
+  "products": []
+  },
+  {
+  "name": "Shirts",
+  "products": [
+               {
+               "sku": 1,
+               "name": "shirt1",
+               "cost": 2999
+               },
+               {
+               "sku": 2,
+               "name": "shirt1",
+               "cost": 1999
+               },
+               {
+               "sku": 3,
+               "name": "shirt3",
+               "cost": 1999
+               },
+               {
+               "sku": 4,
+               "name": "shirt4",
+               "cost": 901
+               },
+               {
+               "sku": 5,
+               "name": "shirt5",
+               "cost": 3311
+               },
+               {
+               "sku": 6,
+               "name": "shirt6",
+               "cost": 1033
+               },
+               {
+               "sku": 7,
+               "name": "shirt7",
+               "cost": 1311
+               },
+               {
+               "sku": 8,
+               "name": "shirt8",
+               "cost": 1122
+               },
+               {
+               "sku": 9,
+               "name": "shirt9",
+               "cost": 1299
+               },
+               {
+               "sku": 10,
+               "name": "shirt10",
+               "cost": 987
+               },
+               {
+               "sku": 11,
+               "name": "shirt11",
+               "cost": 1930
+               },
+               {
+               "sku": 12,
+               "name": "shirt12",
+               "cost": 1921
+               },
+               {
+               "sku": 13,
+               "name": "shirt13",
+               "cost": 1390
+               },
+               {
+               "sku": 14,
+               "name": "shirt14",
+               "cost": 1180
+               },
+               {
+               "sku": 15,
+               "name": "shirt15",
+               "cost": 1920
+               },
+               {
+               "sku": 16,
+               "name": "shirt16",
+               "cost": 1290
+               },
+               {
+               "sku": 17,
+               "name": "shirt17",
+               "cost": 789
+               },
+               {
+               "sku": 18,
+               "name": "shirt18",
+               "cost": 987
+               },
+               {
+               "sku": 19,
+               "name": "shirt19",
+               "cost": 799
+               },
+               {
+               "sku": 20,
+               "name": "shirt20",
+               "cost": 1599
+               },
+               {
+               "sku": 21,
+               "name": "shirt21",
+               "cost": 999
+               },
+               {
+               "sku": 22,
+               "name": "shirt22",
+               "cost": 1200
+               },
+               {
+               "sku": 23,
+               "name": "shirt23",
+               "cost": 898
+               },
+               {
+               "sku": 24,
+               "name": "shirt24",
+               "cost": 1300
+               },
+               {
+               "sku": 25,
+               "name": "shirt25",
+               "cost": 1189
+               },
+               {
+               "sku": 26,
+               "name": "shirt26",
+               "cost": 1222
+               }
+               ]
+  },
+  {
+  "name": "Jackets",
+  "products": []
+  },
+  {
+  "name": "Sweaters",
+  "products": []
+  },
+  {
+  "name": "Jackets",
+  "products": [
+               {
+               "sku": 1,
+               "name": "Jacket1",
+               "cost": 1299
+               },
+               {
+               "sku": 2,
+               "name": "Jacket2",
+               "cost": 1189
+               },
+               {
+               "sku": 3,
+               "name": "Jacket3",
+               "cost": 899
+               },
+               {
+               "sku": 4,
+               "name": "Jacket4",
+               "cost": 1999
+               },
+               {
+               "sku": 5,
+               "name": "Jacket5",
+               "cost": 899
+               },
+               {
+               "sku": 6,
+               "name": "Jacket6",
+               "cost": 1111
+               },
+               {
+               "sku": 7,
+               "name": "Jacket7",
+               "cost": 1400
+               },
+               {
+               "sku": 8,
+               "name": "Jacket8",
+               "cost": 1499
+               },
+               {
+               "sku": 9,
+               "name": "Jacket9",
+               "cost": 1599
+               },
+               {
+               "sku": 10,
+               "name": "Jacket10",
+               "cost": 1299
+               },
+               {
+               "sku": 11,
+               "name": "Jacket11",
+               "cost": 1399
+               },
+               {
+               "sku": 12,
+               "name": "Jacket12",
+               "cost": 767
+               },
+               {
+               "sku": 13,
+               "name": "Jacket13",
+               "cost": 897
+               },
+               {
+               "sku": 14,
+               "name": "Jacket14",
+               "cost": 1090
+               }
+               ]
+  }
+  ,
+  {
+  "name": "Jackets",
+  "products": [
+               {
+               "sku": 1,
+               "name": "Jacket1",
+               "cost": 1299
+               },
+               {
+               "sku": 2,
+               "name": "Jacket2",
+               "cost": 1189
+               },
+               {
+               "sku": 3,
+               "name": "Jacket3",
+               "cost": 899
+               },
+               {
+               "sku": 4,
+               "name": "Jacket4",
+               "cost": 1999
+               },
+               {
+               "sku": 5,
+               "name": "Jacket5",
+               "cost": 899
+               },
+               {
+               "sku": 6,
+               "name": "Jacket6",
+               "cost": 1111
+               },
+               {
+               "sku": 7,
+               "name": "Jacket7",
+               "cost": 1400
+               },
+               {
+               "sku": 8,
+               "name": "Jacket8",
+               "cost": 1499
+               },
+               {
+               "sku": 9,
+               "name": "Jacket9",
+               "cost": 1599
+               },
+               {
+               "sku": 10,
+               "name": "Jacket10",
+               "cost": 1299
+               },
+               {
+               "sku": 11,
+               "name": "Jacket11",
+               "cost": 1399
+               },
+               {
+               "sku": 12,
+               "name": "Jacket12",
+               "cost": 767
+               },
+               {
+               "sku": 13,
+               "name": "Jacket13",
+               "cost": 897
+               },
+               {
+               "sku": 14,
+               "name": "Jacket14",
+               "cost": 1090
+               }
+               ]
+  }
+  ,
+  {
+  "name": "Jackets",
+  "products": [
+               {
+               "sku": 1,
+               "name": "Jacket1",
+               "cost": 1299
+               },
+               {
+               "sku": 2,
+               "name": "Jacket2",
+               "cost": 1189
+               },
+               {
+               "sku": 3,
+               "name": "Jacket3",
+               "cost": 899
+               },
+               {
+               "sku": 4,
+               "name": "Jacket4",
+               "cost": 1999
+               },
+               {
+               "sku": 5,
+               "name": "Jacket5",
+               "cost": 899
+               },
+               {
+               "sku": 6,
+               "name": "Jacket6",
+               "cost": 1111
+               },
+               {
+               "sku": 7,
+               "name": "Jacket7",
+               "cost": 1400
+               },
+               {
+               "sku": 8,
+               "name": "Jacket8",
+               "cost": 1499
+               },
+               {
+               "sku": 9,
+               "name": "Jacket9",
+               "cost": 1599
+               },
+               {
+               "sku": 10,
+               "name": "Jacket10",
+               "cost": 1299
+               },
+               {
+               "sku": 11,
+               "name": "Jacket11",
+               "cost": 1399
+               },
+               {
+               "sku": 12,
+               "name": "Jacket12",
+               "cost": 767
+               },
+               {
+               "sku": 13,
+               "name": "Jacket13",
+               "cost": 897
+               },
+               {
+               "sku": 14,
+               "name": "Jacket14",
+               "cost": 1090
+               }
+               ]
+  }
+  ,
+  {
+  "name": "Jackets",
+  "products": [
+               {
+               "sku": 1,
+               "name": "Jacket1",
+               "cost": 1299
+               },
+               {
+               "sku": 2,
+               "name": "Jacket2",
+               "cost": 1189
+               },
+               {
+               "sku": 3,
+               "name": "Jacket3",
+               "cost": 899
+               },
+               {
+               "sku": 4,
+               "name": "Jacket4",
+               "cost": 1999
+               },
+               {
+               "sku": 5,
+               "name": "Jacket5",
+               "cost": 899
+               },
+               {
+               "sku": 6,
+               "name": "Jacket6",
+               "cost": 1111
+               },
+               {
+               "sku": 7,
+               "name": "Jacket7",
+               "cost": 1400
+               },
+               {
+               "sku": 8,
+               "name": "Jacket8",
+               "cost": 1499
+               },
+               {
+               "sku": 9,
+               "name": "Jacket9",
+               "cost": 1599
+               },
+               {
+               "sku": 10,
+               "name": "Jacket10",
+               "cost": 1299
+               },
+               {
+               "sku": 11,
+               "name": "Jacket11",
+               "cost": 1399
+               },
+               {
+               "sku": 12,
+               "name": "Jacket12",
+               "cost": 767
+               },
+               {
+               "sku": 13,
+               "name": "Jacket13",
+               "cost": 897
+               },
+               {
+               "sku": 14,
+               "name": "Jacket14",
+               "cost": 1090
+               }
+               ]
+  }
+  ,
+  {
+  "name": "Jackets",
+  "products": [
+               {
+               "sku": 1,
+               "name": "Jacket1",
+               "cost": 1299
+               },
+               {
+               "sku": 2,
+               "name": "Jacket2",
+               "cost": 1189
+               },
+               {
+               "sku": 3,
+               "name": "Jacket3",
+               "cost": 899
+               },
+               {
+               "sku": 4,
+               "name": "Jacket4",
+               "cost": 1999
+               },
+               {
+               "sku": 5,
+               "name": "Jacket5",
+               "cost": 899
+               },
+               {
+               "sku": 6,
+               "name": "Jacket6",
+               "cost": 1111
+               },
+               {
+               "sku": 7,
+               "name": "Jacket7",
+               "cost": 1400
+               },
+               {
+               "sku": 8,
+               "name": "Jacket8",
+               "cost": 1499
+               },
+               {
+               "sku": 9,
+               "name": "Jacket9",
+               "cost": 1599
+               },
+               {
+               "sku": 10,
+               "name": "Jacket10",
+               "cost": 1299
+               },
+               {
+               "sku": 11,
+               "name": "Jacket11",
+               "cost": 1399
+               },
+               {
+               "sku": 12,
+               "name": "Jacket12",
+               "cost": 767
+               },
+               {
+               "sku": 13,
+               "name": "Jacket13",
+               "cost": 897
+               },
+               {
+               "sku": 14,
+               "name": "Jacket14",
+               "cost": 1090
+               }
+               ]
+  }
+  ,
+  {
+  "name": "Jackets",
+  "products": [
+               {
+               "sku": 1,
+               "name": "Jacket1",
+               "cost": 1299
+               },
+               {
+               "sku": 2,
+               "name": "Jacket2",
+               "cost": 1189
+               },
+               {
+               "sku": 3,
+               "name": "Jacket3",
+               "cost": 899
+               },
+               {
+               "sku": 4,
+               "name": "Jacket4",
+               "cost": 1999
+               },
+               {
+               "sku": 5,
+               "name": "Jacket5",
+               "cost": 899
+               },
+               {
+               "sku": 6,
+               "name": "Jacket6",
+               "cost": 1111
+               },
+               {
+               "sku": 7,
+               "name": "Jacket7",
+               "cost": 1400
+               },
+               {
+               "sku": 8,
+               "name": "Jacket8",
+               "cost": 1499
+               },
+               {
+               "sku": 9,
+               "name": "Jacket9",
+               "cost": 1599
+               },
+               {
+               "sku": 10,
+               "name": "Jacket10",
+               "cost": 1299
+               },
+               {
+               "sku": 11,
+               "name": "Jacket11",
+               "cost": 1399
+               },
+               {
+               "sku": 12,
+               "name": "Jacket12",
+               "cost": 767
+               },
+               {
+               "sku": 13,
+               "name": "Jacket13",
+               "cost": 897
+               },
+               {
+               "sku": 14,
+               "name": "Jacket14",
+               "cost": 1090
+               }
+               ]
+  }
+  ]
