@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Category.h"
 
-@interface CategoryWithProductsCell : UITableViewCell
+@interface CategoryWithProductsCell : UITableViewCell {
+}
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *productsCollectionView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortingSegmentedControl;
 @property (strong, nonatomic) Category *category;
+@property id delegate;
 
 @end

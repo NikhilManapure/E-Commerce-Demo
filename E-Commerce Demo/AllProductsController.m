@@ -11,6 +11,8 @@
 #import "ProductTableCell.h"
 #import "CategorySectionCell.h"
 #import "Category.h"
+#import "ProductDetailController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface AllProductsController ()
 
@@ -25,27 +27,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.categories = [self getAllCategoriesFromJSON];
-    
     self.isExpandedViewOn = YES;
+    [self configureTableView];
+    [self addSegmentControl];
+    //    [self.navigationController.navigationBar setValue:@(YES) forKeyPath:@"hidesShadow"];
+}
 
+- (void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
+    [self.navigationController setNavigationBarHidden: (velocity.y > 0 && self.isExpandedViewOn) animated:YES];
+}
+
+- (void)configureTableView {
     [self.tableView registerNib: [UINib nibWithNibName: @"CategoryWithProductsCell" bundle: nil] forCellReuseIdentifier: @"CategoryWithProductsCell"];
     [self.tableView registerNib: [UINib nibWithNibName: @"ProductTableCell" bundle: nil] forCellReuseIdentifier: @"ProductTableCell"];
     [self.tableView registerNib: [UINib nibWithNibName: @"CategorySectionCell" bundle: nil] forCellReuseIdentifier: @"CategorySectionCell"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 44.0;
     [self.tableView setContentInset: UIEdgeInsetsMake(8,0,0,0)];
+}
 
-    
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:
-                                            [NSArray arrayWithObjects:@"Expanded",@"List View",
-                                             nil]];
+- (void)addSegmentControl {
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems: [NSArray arrayWithObjects:@"Expanded",@"List View", nil]];
     segmentedControl.selectedSegmentIndex = 0;
     segmentedControl.tintColor = [UIColor lightGrayColor];
-    
     [segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
-    
     self.navigationItem.titleView = segmentedControl;
 }
 
@@ -87,6 +93,7 @@
     if (self.isExpandedViewOn) {
         CategoryWithProductsCell *cell = (CategoryWithProductsCell *)[self.tableView dequeueReusableCellWithIdentifier: @"CategoryWithProductsCell"];
         cell.category = self.categories[indexPath.row];
+        cell.delegate = self;
         return cell;
     }
     
@@ -123,7 +130,7 @@
         [self.tableView reloadData];
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     } else {
-        
+        [self performSegueWithIdentifier:@"ToProductDetailAnimated" sender:self.categories[indexPath.section].products[indexPath.row - 1]];
     }
 }
 
@@ -134,6 +141,37 @@
     return [Category getCategoriesFromJSON: categories];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ToProductDetail"] || [[segue identifier] isEqualToString:@"ToProductDetailAnimated"]) {
+        ProductDetailController *detailViewController = [segue destinationViewController];
+        detailViewController.product = (Product *)sender;
+    }
+}
 
+- (void)selectProduct:(Product *)product withFrame:(CGRect)cellFrameInSuperview {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cellFrameInSuperview];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [imageView sd_setImageWithURL:[NSURL URLWithString: product.imageUrl] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
+    [self.view addSubview:imageView];
+    
+    CGRect fullScreenRect = [UIScreen.mainScreen bounds];
+    CGFloat nonViewHeight = self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
+    fullScreenRect.origin.y = fullScreenRect.origin.y + nonViewHeight;
+    fullScreenRect.size.height = fullScreenRect.size.height - nonViewHeight;
+    
+    [UIView animateWithDuration: 0.2 delay: 0 options: UIViewAnimationOptionCurveLinear  animations:^{
+        [imageView setFrame: fullScreenRect];
+        [imageView setBackgroundColor:[UIColor whiteColor]];
+        [self navigationController].navigationBar.alpha = 0.2f;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration: 0.3 delay: 0 options: UIViewAnimationOptionCurveLinear  animations:^{
+            [self navigationController].navigationBar.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            [self navigationController].navigationBar.alpha = 1.0f;
+        }];
+        [self performSegueWithIdentifier:@"ToProductDetail" sender: product];
+        [imageView removeFromSuperview];
+    }];
+}
 
 @end

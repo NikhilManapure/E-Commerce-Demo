@@ -16,15 +16,16 @@
 
 
 + (NSString *)randomImageURL {
+    // http://www.stickpng.com/img/clothes/hoodies/85-south-hoodie
     NSArray *urls = [NSArray arrayWithObjects:
-                    @"http://www.stickpng.com/assets/thumbs/58e38cda204d556bbd97b15e.png",
-                    @"http://www.stickpng.com/assets/thumbs/58ee81d93545163ec1942cba.png",
-                    @"http://www.stickpng.com/assets/thumbs/58e38cd2204d556bbd97b15d.png",
-                    @"http://www.stickpng.com/assets/thumbs/58e38ce2204d556bbd97b15f.png",
-                    @"http://www.stickpng.com/assets/thumbs/58e38dc4204d556bbd97b166.png",
-                    @"http://www.stickpng.com/assets/thumbs/58e38e1a204d556bbd97b167.png",
-                    @"http://www.stickpng.com/assets/thumbs/58e38d0a204d556bbd97b163.png"
-    , nil];
+                     @"http://www.stickpng.com/assets/thumbs/58e38cda204d556bbd97b15e.png",
+                     @"http://www.stickpng.com/assets/thumbs/58ee81d93545163ec1942cba.png",
+                     @"http://www.stickpng.com/assets/thumbs/58e38cd2204d556bbd97b15d.png",
+                     @"http://www.stickpng.com/assets/thumbs/58e38ce2204d556bbd97b15f.png",
+                     @"http://www.stickpng.com/assets/thumbs/58e38dc4204d556bbd97b166.png",
+                     @"http://www.stickpng.com/assets/thumbs/58e38e1a204d556bbd97b167.png",
+                     @"http://www.stickpng.com/assets/thumbs/58e38d0a204d556bbd97b163.png"
+                     , nil];
     return urls[arc4random_uniform((unsigned int)urls.count)];
 }
 @end

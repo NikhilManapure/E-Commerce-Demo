@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Utility.h"
 
-@interface AllProductsController : UIViewController
-
+@interface AllProductsController : UIViewController<ProductSelectionProtocol>
 
 @end
 

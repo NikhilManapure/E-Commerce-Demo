@@ -8,18 +8,13 @@
 
 #import "CategoryWithProductsCell.h"
 #import "ProductCell.h"
+#import "AllProductsController.h"
 
 @implementation CategoryWithProductsCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self.productsCollectionView registerNib:[UINib nibWithNibName: @"ProductCell" bundle: nil] forCellWithReuseIdentifier:@"ProductCell"];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -58,6 +53,33 @@
     CGFloat height = self.productsCollectionView.frame.size.height;
     CGFloat width  = self.productsCollectionView.frame.size.width;
     return CGSizeMake(width * 0.33, height * 0.5);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewLayoutAttributes *attributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
+    CGRect cellFrameInSuperview = [collectionView convertRect:attributes.frame toView: nil];
+    if ([self.delegate respondsToSelector:@selector(selectProduct:withFrame:)]) {
+        [self.delegate selectProduct: self.category.products[indexPath.row] withFrame:cellFrameInSuperview];
+    }
+    
+//    UIImageView *view = [[UIImageView alloc] initWithFrame:cellFrameInSuperview];
+//    view.contentMode = UIViewContentModeScaleAspectFit;
+//    [view sd_setImageWithURL:[NSURL URLWithString: self.category.products[indexPath.row].imageUrl] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
+//    [[self.delegate view] addSubview:view];
+//    
+//    CGRect fullScreenRect = [UIScreen.mainScreen bounds];
+//    CGFloat ht = [self.delegate navigationController].navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
+//    fullScreenRect.origin.y = fullScreenRect.origin.y + ht;
+//    fullScreenRect.size.height = fullScreenRect.size.height - ht;
+//    
+//    [UIView animateWithDuration: 0.2 delay: 0 options: UIViewAnimationOptionCurveLinear  animations:^{
+//        [view setFrame: [self.delegate view].frame];
+//        [view setFrame: fullScreenRect];
+//        [view setBackgroundColor:[UIColor whiteColor]];
+//    } completion:^(BOOL finished) {
+//        
+//        [view removeFromSuperview];
+//    }];
 }
 
 @end

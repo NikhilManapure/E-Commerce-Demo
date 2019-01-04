@@ -13,6 +13,7 @@
 		30429FFD21DCC15000DABC45 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 30429FFC21DCC15000DABC45 /* Product.m */; };
 		3042A00321DDEF1200DABC45 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042A00221DDEF1200DABC45 /* Utility.m */; };
 		3042A00621DE0A7D00DABC45 /* BorderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042A00521DE0A7D00DABC45 /* BorderedView.m */; };
+		3042A00921DE385D00DABC45 /* ProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042A00821DE385D00DABC45 /* ProductDetailController.m */; };
 		30C888D021DB771600F4B05C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C888CF21DB771600F4B05C /* main.m */; };
 		30C888D321DB771600F4B05C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C888D221DB771600F4B05C /* AppDelegate.m */; };
 		30C888D621DB771600F4B05C /* AllProductsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C888D521DB771600F4B05C /* AllProductsController.m */; };
@@ -64,6 +65,8 @@
 		3042A00221DDEF1200DABC45 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		3042A00421DE0A7D00DABC45 /* BorderedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderedView.h; sourceTree = "<group>"; };
 		3042A00521DE0A7D00DABC45 /* BorderedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderedView.m; sourceTree = "<group>"; };
+		3042A00721DE385D00DABC45 /* ProductDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailController.h; sourceTree = "<group>"; };
+		3042A00821DE385D00DABC45 /* ProductDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailController.m; sourceTree = "<group>"; };
 		30C888CB21DB771600F4B05C /* E-Commerce Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Commerce Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C888CF21DB771600F4B05C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30C888D121DB771600F4B05C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				30C8890221DB808500F4B05C /* Cells */,
 				30C888D421DB771600F4B05C /* AllProductsController.h */,
 				30C888D521DB771600F4B05C /* AllProductsController.m */,
+				3042A00721DE385D00DABC45 /* ProductDetailController.h */,
+				3042A00821DE385D00DABC45 /* ProductDetailController.m */,
 			);
 			name = ProductFlow;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				30C888D321DB771600F4B05C /* AppDelegate.m in Sources */,
 				30C888D021DB771600F4B05C /* main.m in Sources */,
 				30C8890621DB80C400F4B05C /* CategoryWithProductsCell.m in Sources */,
+				3042A00921DE385D00DABC45 /* ProductDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
