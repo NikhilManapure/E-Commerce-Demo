@@ -33,38 +33,6 @@
     [self addSegmentControl];
 }
 
-- (void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
-    [self.navigationController setNavigationBarHidden: (velocity.y > 0 && self.isExpandedViewOn) animated:YES];
-}
-
-- (void)configureTableView {
-    [self.tableView registerNib: [UINib nibWithNibName: @"CategoryWithProductsCell" bundle: nil] forCellReuseIdentifier: @"CategoryWithProductsCell"];
-    [self.tableView registerNib: [UINib nibWithNibName: @"ProductTableCell" bundle: nil] forCellReuseIdentifier: @"ProductTableCell"];
-    [self.tableView registerNib: [UINib nibWithNibName: @"CategorySectionCell" bundle: nil] forCellReuseIdentifier: @"CategorySectionCell"];
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 44.0;
-    [self.tableView setContentInset: UIEdgeInsetsMake(8,0,0,0)];
-}
-
-- (void)addSegmentControl {
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems: [NSArray arrayWithObjects:@"Expanded",@"List View", nil]];
-    segmentedControl.selectedSegmentIndex = 0;
-    segmentedControl.tintColor = [UIColor lightGrayColor];
-    [segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
-    self.navigationItem.titleView = segmentedControl;
-}
-
-- (void)segmentAction:(UISegmentedControl *)segmentedControl {
-    self.isExpandedViewOn = (segmentedControl.selectedSegmentIndex == 0);
-    [self.tableView reloadData];
-    
-    if (self.isExpandedViewOn) {
-        self.tableView.estimatedRowHeight = 100;
-    }else {
-        self.tableView.estimatedRowHeight = 40;
-    }
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView {
@@ -133,6 +101,13 @@
     }
 }
 
+- (void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
+    [self.navigationController setNavigationBarHidden: (velocity.y > 0 && self.isExpandedViewOn) animated:YES];
+}
+
+
+#pragma mark - Convinence Methods
+
 - (NSArray<Category *> *)getAllCategoriesFromJSON {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Input" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
@@ -146,6 +121,37 @@
         detailViewController.product = (Product *)sender;
     }
 }
+
+- (void)configureTableView {
+    [self.tableView registerNib: [UINib nibWithNibName: @"CategoryWithProductsCell" bundle: nil] forCellReuseIdentifier: @"CategoryWithProductsCell"];
+    [self.tableView registerNib: [UINib nibWithNibName: @"ProductTableCell" bundle: nil] forCellReuseIdentifier: @"ProductTableCell"];
+    [self.tableView registerNib: [UINib nibWithNibName: @"CategorySectionCell" bundle: nil] forCellReuseIdentifier: @"CategorySectionCell"];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44.0;
+    [self.tableView setContentInset: UIEdgeInsetsMake(8,0,0,0)];
+}
+
+- (void)addSegmentControl {
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems: [NSArray arrayWithObjects:@"Expanded",@"List View", nil]];
+    segmentedControl.selectedSegmentIndex = 0;
+    segmentedControl.tintColor = [UIColor lightGrayColor];
+    [segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+    self.navigationItem.titleView = segmentedControl;
+}
+
+- (void)segmentAction:(UISegmentedControl *)segmentedControl {
+    self.isExpandedViewOn = (segmentedControl.selectedSegmentIndex == 0);
+    [self.tableView reloadData];
+    
+    if (self.isExpandedViewOn) {
+        self.tableView.estimatedRowHeight = 100;
+    }else {
+        self.tableView.estimatedRowHeight = 40;
+    }
+}
+
+
+#pragma mark - ProductSelectionProtocol
 
 - (void)selectProduct:(Product *)product withFrame:(CGRect)cellFrameInSuperview {
     [self.view setUserInteractionEnabled: NO];

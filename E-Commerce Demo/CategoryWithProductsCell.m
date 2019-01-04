@@ -15,6 +15,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self.productsCollectionView registerNib:[UINib nibWithNibName: @"ProductCell" bundle: nil] forCellWithReuseIdentifier:@"ProductCell"];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    longPress.minimumPressDuration = 0.2;
+    [self addGestureRecognizer:longPress];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -52,7 +55,7 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = self.productsCollectionView.frame.size.height;
     CGFloat width  = self.productsCollectionView.frame.size.width;
-    return CGSizeMake(width * 0.33, height * 0.5);
+    return CGSizeMake(width * 0.333, height * 0.5);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,4 +66,28 @@
     }
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath {
+    NSMutableArray *moveArray = [[NSMutableArray alloc] initWithArray:self.category.products];
+    id obj = [self.category.products objectAtIndex:sourceIndexPath.row];
+    [moveArray removeObject:obj];
+    [moveArray insertObject:obj atIndex:destinationIndexPath.row];
+    self.category.products = moveArray;
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        NSIndexPath *indexPath = [self.productsCollectionView indexPathForItemAtPoint:[gesture locationInView: self.productsCollectionView]];
+        [self.productsCollectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+        [self.productsCollectionView updateInteractiveMovementTargetPosition:[gesture locationInView: self.productsCollectionView]];
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self.productsCollectionView endInteractiveMovement];
+    } else {
+        [self.productsCollectionView cancelInteractiveMovement];
+    }
+}
 @end
