@@ -31,7 +31,6 @@
     self.isExpandedViewOn = YES;
     [self configureTableView];
     [self addSegmentControl];
-    //    [self.navigationController.navigationBar setValue:@(YES) forKeyPath:@"hidesShadow"];
 }
 
 - (void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
@@ -149,6 +148,7 @@
 }
 
 - (void)selectProduct:(Product *)product withFrame:(CGRect)cellFrameInSuperview {
+    [self.view setUserInteractionEnabled: NO];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:cellFrameInSuperview];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [imageView sd_setImageWithURL:[NSURL URLWithString: product.imageUrl] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
@@ -164,6 +164,7 @@
         [imageView setBackgroundColor:[UIColor whiteColor]];
         [self navigationController].navigationBar.alpha = 0.2f;
     } completion:^(BOOL finished) {
+        [self.view setUserInteractionEnabled: YES];
         [UIView animateWithDuration: 0.3 delay: 0 options: UIViewAnimationOptionCurveLinear  animations:^{
             [self navigationController].navigationBar.alpha = 1.0f;
         } completion:^(BOOL finished) {

@@ -8,6 +8,7 @@
 
 #import "ProductDetailController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ProductDetailController ()
 @property CGFloat lastScale;

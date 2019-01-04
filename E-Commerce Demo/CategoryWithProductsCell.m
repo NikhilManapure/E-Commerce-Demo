@@ -61,25 +61,6 @@
     if ([self.delegate respondsToSelector:@selector(selectProduct:withFrame:)]) {
         [self.delegate selectProduct: self.category.products[indexPath.row] withFrame:cellFrameInSuperview];
     }
-    
-//    UIImageView *view = [[UIImageView alloc] initWithFrame:cellFrameInSuperview];
-//    view.contentMode = UIViewContentModeScaleAspectFit;
-//    [view sd_setImageWithURL:[NSURL URLWithString: self.category.products[indexPath.row].imageUrl] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
-//    [[self.delegate view] addSubview:view];
-//    
-//    CGRect fullScreenRect = [UIScreen.mainScreen bounds];
-//    CGFloat ht = [self.delegate navigationController].navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
-//    fullScreenRect.origin.y = fullScreenRect.origin.y + ht;
-//    fullScreenRect.size.height = fullScreenRect.size.height - ht;
-//    
-//    [UIView animateWithDuration: 0.2 delay: 0 options: UIViewAnimationOptionCurveLinear  animations:^{
-//        [view setFrame: [self.delegate view].frame];
-//        [view setFrame: fullScreenRect];
-//        [view setBackgroundColor:[UIColor whiteColor]];
-//    } completion:^(BOOL finished) {
-//        
-//        [view removeFromSuperview];
-//    }];
 }
 
 @end

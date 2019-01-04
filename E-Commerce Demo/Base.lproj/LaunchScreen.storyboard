@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,24 +23,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZM-be-MkG">
-                                <rect key="frame" x="32" y="592" width="311" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-ex-pbu">
+                                <rect key="frame" x="60" y="206" width="255" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dzv-ex-pbu" secondAttribute="height" id="USr-3q-L0E"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Made with ❤️ by Nikhil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZM-be-MkG">
+                                <rect key="frame" x="32" y="505" width="311" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.8901960784313725" green="0.41960784313725491" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dzv-ex-pbu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="44" id="3h2-VS-g0H"/>
+                            <constraint firstItem="SZM-be-MkG" firstAttribute="top" secondItem="dzv-ex-pbu" secondAttribute="bottom" constant="44" id="4XA-Gi-fWf"/>
                             <constraint firstItem="SZM-be-MkG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="16" id="As3-fe-dEp"/>
                             <constraint firstItem="SZM-be-MkG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FHm-7i-dve"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="SZM-be-MkG" secondAttribute="bottom" constant="54" id="VJf-fT-ZkD"/>
+                            <constraint firstItem="dzv-ex-pbu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JSc-ul-0C2"/>
+                            <constraint firstItem="dzv-ex-pbu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KzD-WD-tTQ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SplashScreen" width="340" height="340"/>
+    </resources>
 </document>
