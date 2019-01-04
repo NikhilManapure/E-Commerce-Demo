@@ -33,6 +33,7 @@
     [self addSegmentControl];
 }
 
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView {
@@ -102,7 +103,7 @@
 }
 
 - (void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
-    [self.navigationController setNavigationBarHidden: (velocity.y > 0 && self.isExpandedViewOn) animated:YES];
+//    [self.navigationController setNavigationBarHidden: (velocity.y > 0 && self.isExpandedViewOn) animated:YES];
 }
 
 
