@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0C6AA76ED8EBC9D8B3D1EEEE /* libPods-E-Commerce DemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 076691D5CFF626F7BEA7E3F7 /* libPods-E-Commerce DemoUITests.a */; };
-		30429FF821DCBFFA00DABC45 /* Category.h in Sources */ = {isa = PBXBuildFile; fileRef = 30429FF721DCBFFA00DABC45 /* Category.h */; };
 		30429FFB21DCC14100DABC45 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 30429FFA21DCC14100DABC45 /* Category.m */; };
 		30429FFD21DCC15000DABC45 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 30429FFC21DCC15000DABC45 /* Product.m */; };
 		3042A00321DDEF1200DABC45 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3042A00221DDEF1200DABC45 /* Utility.m */; };
@@ -574,7 +573,6 @@
 				30429FFB21DCC14100DABC45 /* Category.m in Sources */,
 				30C888D621DB771600F4B05C /* AllProductsController.m in Sources */,
 				30C8891D21DCB62A00F4B05C /* CategorySectionCell.m in Sources */,
-				30429FF821DCBFFA00DABC45 /* Category.h in Sources */,
 				30C8891021DB893300F4B05C /* ProductTableCell.m in Sources */,
 				3042A00621DE0A7D00DABC45 /* BorderedView.m in Sources */,
 				3042A00321DDEF1200DABC45 /* Utility.m in Sources */,
